@@ -47,7 +47,7 @@ window.renderStatistics = function (ctx, names, times) {
     if (namePlayer === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'hsl(240, 100%, ' + randomSaturation +'%)';
+      ctx.fillStyle = 'hsl(240, 100%, ' + randomSaturation + '%)';
     }
   }
 
