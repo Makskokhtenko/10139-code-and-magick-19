@@ -23,28 +23,23 @@ var generateName = function () {
   return wizardName;
 };
 
-var wizards = [
-  {
-    name: generateName(),
-    coatColor: generateRandomColor(WIZARD_COATS),
-    eyesColor: generateRandomColor(WIZARD_EYES)
-  },
-  {
-    name: generateName(),
-    coatColor: generateRandomColor(WIZARD_COATS),
-    eyesColor: generateRandomColor(WIZARD_EYES)
-  },
-  {
-    name: generateName(),
-    coatColor: generateRandomColor(WIZARD_COATS),
-    eyesColor: generateRandomColor(WIZARD_EYES)
-  },
-  {
-    name: generateName(),
-    coatColor: generateRandomColor(WIZARD_COATS),
-    eyesColor: generateRandomColor(WIZARD_EYES)
+var getWizardList = function (quantity) {
+  var wizardList = [];
+
+  for (var i = 0; i < quantity; i++) {
+    var wizard = {};
+
+    wizard.name = generateName();
+    wizard.coatColor = generateRandomColor(WIZARD_COATS);
+    wizard.eyesColor = generateRandomColor(WIZARD_EYES);
+
+    wizardList.push(wizard);
   }
-];
+
+  return wizardList;
+};
+
+var wizards = getWizardList(4);
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
